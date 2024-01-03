@@ -6,6 +6,8 @@ plugins {
     kotlin("jvm") version "1.9.21"
     kotlin("plugin.spring") version "1.9.21"
     kotlin("plugin.jpa") version "1.9.21"
+
+    kotlin("kapt") version "1.6.21"
 }
 
 java {
@@ -23,10 +25,12 @@ allprojects {
     }
 }
 
+// 하위 모듈에서도 사용할 수 있도록
 subprojects {
     apply(plugin = "kotlin")
     apply(plugin = "kotlin-spring")
     apply(plugin = "io.spring.dependency-management")
+    apply(plugin = "kotlin-kapt")
 
     dependencies {
         // JWT 인증

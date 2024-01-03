@@ -1,0 +1,9 @@
+server:
+  port: 9090
+
+
+jwt:
+  issuer: jara # 프로젝트명
+  subject: auth
+  expires-time: 3600
+  secret: my-secret
